@@ -15,5 +15,3 @@
  **Questão 05** <br>
  Resposta --> B
 
-
-git branch --set-upstream-to=Atividades/<branch> main
