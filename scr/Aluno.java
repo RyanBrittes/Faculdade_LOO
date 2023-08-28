@@ -1,5 +1,3 @@
-package loo;
-
 import java.time.LocalDate;
 
 public class Aluno extends BasePessoa {
