@@ -2,8 +2,8 @@
 
 ### 📋 Sobre o Repositório:
 ```
-Este repositório tem como finalidade servir de armazenamento de atividades realizadas na
-disciplina de LOO (Linguagem Orientada a Objetos), cursada na Universidade Anhaguera - Uniderp. Tendo como tutor o professor Luiz.
+Este repositório tem como finalidade servir de armazenamento de atividades realizadas nadisciplina de LOO
+(Linguagem Orientada a Objetos), cursada na Universidade Anhaguera - Uniderp. Tendo como tutor o professor Luiz.
 ```
 
 
