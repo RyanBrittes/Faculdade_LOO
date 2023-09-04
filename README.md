@@ -6,7 +6,7 @@ Este repositório tem como finalidade servir de armazenamento de atividades real
 A disciplina cursada tem como objetivo discutir o funcionamento do paradigma de Orientado a Objetos, para fins didáticos a linguagem de programação utilizada na ministração da disciplina é Java.
 
 ### Projetos:
-* [Projeto Escola]()
+* [Projeto Escola](https://github.com/RyanBrittes/Faculdade_LOO/tree/main/ProjetoEscola)
 > Projeto desenvolvido durante a disciplina com ênfase em reforçar e aprimorar os conceitos do paradigma Orientado a Objetos.
 
 ### Atividades:
