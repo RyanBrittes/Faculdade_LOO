@@ -1,3 +1,5 @@
+package uniderp.loo.escola.dominio;
+
 import java.time.LocalDate;
 
 public abstract class BasePessoa {
@@ -9,7 +11,6 @@ public abstract class BasePessoa {
     protected String usuario;
     protected String senha;
     protected String registro;
-    protected String documento;
 
     public int getCodigo() {
         return codigo;
@@ -59,15 +60,9 @@ public abstract class BasePessoa {
     public void setRegistro(String registro) {
         this.registro = registro;
     }
-    public String getDocumento() {
-        return documento;
-    }
-    public void setDocumento(String documento) {
-        this.documento = documento;
-    }
 
     public BasePessoa(int codigo, String nome, String email, String telefone, LocalDate dataNascimento, String usuario,
-        String senha, String registro, String documento) {
+        String senha, String registro) {
             this.codigo = codigo;
             this.nome = nome;
             this.email = email;
@@ -76,6 +71,5 @@ public abstract class BasePessoa {
             this.usuario = usuario;
             this.senha = senha;
             this.registro = registro;
-            this.documento = documento;
         }
 }
