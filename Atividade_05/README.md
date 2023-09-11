@@ -12,3 +12,6 @@
 Usando o que você aprendeu em POO, análise os atributos, distribua nas classes relacionadas, reajustando atributos quando necessário, e crie o diagrama de classes no draw.io, salvando o resultado em PDF.
 
 >Após isso, crie um projeto Java chamado ProjetoVeiculosEstagiario, codifique as classes que você criou no diagrama, publique no GitHub, e mande o link para o professor.
+
+### UML 
+![](https://github.com/RyanBrittes/Faculdade_LOO/blob/main/Atividade_05/Diagrama_UML/UML_VeiculosEstagiario.jpg)
