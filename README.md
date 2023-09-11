@@ -14,6 +14,7 @@ A disciplina cursada tem como objetivo discutir o funcionamento do paradigma de 
 * [Atividade 02](https://github.com/RyanBrittes/Faculdade_LOO/blob/main/Atividade_02/LOO_Atividade_02.pdf)
 * [Atividade 03](https://github.com/RyanBrittes/Faculdade_LOO/tree/main/Atividade_03)
 * [Atividade 04](https://github.com/RyanBrittes/Faculdade_LOO/tree/main/Atividade_04)
+* [Atividade 05](https://github.com/RyanBrittes/Faculdade_LOO/tree/main/Atividade_05)
 > Atividades concluídas solicitadas pelo tutor da disciplina.
 
 ### ✒️ Autor
