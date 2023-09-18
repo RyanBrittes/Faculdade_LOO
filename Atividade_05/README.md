@@ -13,5 +13,9 @@ Usando o que você aprendeu em POO, análise os atributos, distribua nas classes
 
 >Após isso, crie um projeto Java chamado ProjetoVeiculosEstagiario, codifique as classes que você criou no diagrama, publique no GitHub, e mande o link para o professor.
 
-### UML 
+### DIAGRAMA INCOMPLETO
+
+![](https://github.com/RyanBrittes/Faculdade_LOO/blob/main/Atividade_05/Diagrama_UML/DIAGRAMA_INCOMPLETO.png)
+
+### UML CORRIGIDO
 ![](https://github.com/RyanBrittes/Faculdade_LOO/blob/main/Atividade_05/Diagrama_UML/UML_ProjetoVeiculosEstagiario.jpg)
