@@ -1,10 +1,8 @@
 package uniderp.loo.escola.dominio;
 
-public abstract class BaseDocumento extends BaseVeiculo{
-    protected String chassi;
+public abstract class BaseDocumentacao extends BaseVeiculo{
+    //Atributos
     protected String nomeProprietario;
-    protected String codigoRenavam;
-    protected String placa;
     protected int anoModelo;
     protected int anoFabricacao;
     protected double pesoLiquido;
@@ -17,30 +15,15 @@ public abstract class BaseDocumento extends BaseVeiculo{
     protected int qtdeOcupantes;
     protected String fabricante;
     protected String modelo;
-    
-    public String getChassi() {
-        return chassi;
-    }
-    public void setChassi(String chassi) {
-        this.chassi = chassi;
-    }
+    protected int eixos;
+    protected int assentos;
+
+    //Getters e Setters
     public String getNomeProprietario() {
         return nomeProprietario;
     }
     public void setNomeProprietario(String nomeProprietario) {
         this.nomeProprietario = nomeProprietario;
-    }
-    public String getCodigoRenavam() {
-        return codigoRenavam;
-    }
-    public void setCodigoRenavam(String codigoRenavam) {
-        this.codigoRenavam = codigoRenavam;
-    }
-    public String getPlaca() {
-        return placa;
-    }
-    public void setPlaca(String placa) {
-        this.placa = placa;
     }
     public int getAnoModelo() {
         return anoModelo;
@@ -114,16 +97,26 @@ public abstract class BaseDocumento extends BaseVeiculo{
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    
-    public BaseDocumento(int codigo, String nome, String chassi, String nomeProprietario, String codigoRenavam,
-            String placa, int anoModelo, int anoFabricacao, double pesoLiquido, double pesoTotal, String estadoUF,
-            String cidadeUF, double potencia, String tipoCombustivel, int qtdeMotores, int qtdeOcupantes,
-            String fabricante, String modelo) {
-        super(codigo, nome);
-        this.chassi = chassi;
+    public int getEixos() {
+        return eixos;
+    }
+    public void setEixos(int eixos) {
+        this.eixos = eixos;
+    }
+    public int getAssentos() {
+        return assentos;
+    }
+    public void setAssentos(int assentos) {
+        this.assentos = assentos;
+    }
+
+    //Construtor
+    public BaseDocumentacao(int codigo, String nome, String cor, int rodas, String tipoVeiculo, String nomeProprietario,
+            int anoModelo, int anoFabricacao, double pesoLiquido, double pesoTotal, String estadoUF, String cidadeUF,
+            double potencia, String tipoCombustivel, int qtdeMotores, int qtdeOcupantes, String fabricante,
+            String modelo, int eixos, int assentos) {
+        super(codigo, nome, cor, rodas, tipoVeiculo);
         this.nomeProprietario = nomeProprietario;
-        this.codigoRenavam = codigoRenavam;
-        this.placa = placa;
         this.anoModelo = anoModelo;
         this.anoFabricacao = anoFabricacao;
         this.pesoLiquido = pesoLiquido;
@@ -136,7 +129,8 @@ public abstract class BaseDocumento extends BaseVeiculo{
         this.qtdeOcupantes = qtdeOcupantes;
         this.fabricante = fabricante;
         this.modelo = modelo;
+        this.eixos = eixos;
+        this.assentos = assentos;
     }
-
     
 }

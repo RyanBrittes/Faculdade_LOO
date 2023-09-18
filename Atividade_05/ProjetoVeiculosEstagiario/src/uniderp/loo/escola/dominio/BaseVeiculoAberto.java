@@ -1,6 +1,6 @@
 package uniderp.loo.escola.dominio;
 
-public abstract class BaseVeiculoTerrestre extends BaseVeiculoFechado implements ISinalizacao{
+public abstract class BaseVeiculoAberto extends BaseDocumentacao implements ISinalizacao{
     //Atributos
     protected String placa;
     protected String chassi;
@@ -27,14 +27,14 @@ public abstract class BaseVeiculoTerrestre extends BaseVeiculoFechado implements
     }
 
     //Construtor
-    public BaseVeiculoTerrestre(int codigo, String nome, String cor, int rodas, String tipoVeiculo,
+    public BaseVeiculoAberto(int codigo, String nome, String cor, int rodas, String tipoVeiculo,
             String nomeProprietario, int anoModelo, int anoFabricacao, double pesoLiquido, double pesoTotal,
             String estadoUF, String cidadeUF, double potencia, String tipoCombustivel, int qtdeMotores,
-            int qtdeOcupantes, String fabricante, String modelo, int eixos, int assentos, int portas, String placa,
-            String chassi, String codigoRenavam) {
+            int qtdeOcupantes, String fabricante, String modelo, int eixos, int assentos, String placa, String chassi,
+            String codigoRenavam) {
         super(codigo, nome, cor, rodas, tipoVeiculo, nomeProprietario, anoModelo, anoFabricacao, pesoLiquido, pesoTotal,
                 estadoUF, cidadeUF, potencia, tipoCombustivel, qtdeMotores, qtdeOcupantes, fabricante, modelo, eixos,
-                assentos, portas);
+                assentos);
         this.placa = placa;
         this.chassi = chassi;
         this.codigoRenavam = codigoRenavam;

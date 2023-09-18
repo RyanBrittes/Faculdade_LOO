@@ -1,40 +1,27 @@
 package uniderp.loo.escola.dominio;
 
-public abstract class BaseVeiculoAereo extends BaseCaracteristicas implements ILocomocaoAereo{
+public abstract class BaseVeiculoAereo extends BaseVeiculoFechado implements ILocomocaoAerea{
+    //Atributos
     protected String tipoAeronave;
-    protected String licencaPiloto;
-    
+
+    //Getters e Setters
     public String getTipoAeronave() {
         return tipoAeronave;
     }
+
     public void setTipoAeronave(String tipoAeronave) {
         this.tipoAeronave = tipoAeronave;
     }
-    public String getLicencaPiloto() {
-        return licencaPiloto;
-    }
-    public void setLicencaPiloto(String licencaPiloto) {
-        this.licencaPiloto = licencaPiloto;
-    }
 
-    public BaseVeiculoAereo(int codigo, String nome, String chassi, String nomeProprietario, String codigoRenavam,
-            String placa, int anoModelo, int anoFabricacao, double pesoLiquido, double pesoTotal, String estadoUF,
-            String cidadeUF, double potencia, String tipoCombustivel, int qtdeMotores, int qtdeOcupantes,
-            String fabricante, String modelo, String cor, int eixos, int portas, int rodas, int assentos,
-            String tipoVeiculo, String tipoAeronave, String licencaPiloto) {
-        super(codigo, nome, chassi, nomeProprietario, codigoRenavam, placa, anoModelo, anoFabricacao, pesoLiquido,
-                pesoTotal, estadoUF, cidadeUF, potencia, tipoCombustivel, qtdeMotores, qtdeOcupantes, fabricante,
-                modelo, cor, eixos, portas, rodas, assentos, tipoVeiculo);
+    //Construtor
+    public BaseVeiculoAereo(int codigo, String nome, String cor, int rodas, String tipoVeiculo, String nomeProprietario,
+            int anoModelo, int anoFabricacao, double pesoLiquido, double pesoTotal, String estadoUF, String cidadeUF,
+            double potencia, String tipoCombustivel, int qtdeMotores, int qtdeOcupantes, String fabricante,
+            String modelo, int eixos, int assentos, int portas, String tipoAeronave) {
+        super(codigo, nome, cor, rodas, tipoVeiculo, nomeProprietario, anoModelo, anoFabricacao, pesoLiquido, pesoTotal,
+                estadoUF, cidadeUF, potencia, tipoCombustivel, qtdeMotores, qtdeOcupantes, fabricante, modelo, eixos,
+                assentos, portas);
         this.tipoAeronave = tipoAeronave;
-        this.licencaPiloto = licencaPiloto;
     }
 
-    public void Decolar() {
-        System.out.println("teste" + this.tipoAeronave);
-    }
-    public void Pousar() {
-        System.out.println("teste" + this.tipoAeronave);
-    }
-
-    
 }
