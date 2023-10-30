@@ -3,7 +3,7 @@ package br.com.fichaEscolar;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//Classe responsável por criar um menu e os dados dos alunos possam ser visualizados e modificados
+//Classe responsável por criar um menu para que os dados dos alunos possam ser visualizados e modificados
 public class menuAlunos {
     //Atributos
     private ArrayList<Aluno> alunoList;
@@ -14,8 +14,9 @@ public class menuAlunos {
         this.alunoList = new ArrayList<>();
         this.scan = new Scanner(System.in);
     }
+    
     //Função responsável por imprimir o menu de opções
-    public void Executar(){
+    public void menuExecutar(){
         int opt;
         do
         {
@@ -27,11 +28,11 @@ public class menuAlunos {
 
             switch(opt){
                 case 1:
-                    this.gerenciarAlunos();
+                    this.menuGerenciarAlunos();
                     break;
 
                 case 2:
-                    this.rendimentoEscolar();
+                    this.menuRendimentoEscolar();
                     break;
 
                 case 9:
@@ -45,15 +46,9 @@ public class menuAlunos {
         }while(opt != 9);
     }
 
-    //Função responsável por imprimir o submenu da opção 1
-    public void gerenciarAlunos(){
+    //Função responsável por abrir o submenu da opção 1 do menuExecutar
+    public void menuGerenciarAlunos(){
         int opt;
-        double a1 = 0;
-        double p1 = 0;
-        double a2 = 0;
-        double p2 = 0;
-        String nome = "";
-        int codigo = 0;
 
         do{
             System.out.println("\n\nDigite uma opção:\n\n");
@@ -68,12 +63,7 @@ public class menuAlunos {
 
             switch (opt) {
                 case 1:
-                    System.out.println("Informe o nome do aluno: \n");
-                    nome = scan.next();
-
-                    System.out.println("Informe o codigo do aluno: \n");
-                    codigo = scan.nextInt();
-                    alunoList.add(new Aluno(nome, codigo, a1, p1, a2, p2));
+                    this.adicionarAluno();
                     break;
                 
                 case 2:
@@ -89,136 +79,36 @@ public class menuAlunos {
                     break;
 
                 case 5:
-                    if(alunoList.isEmpty()){
-                    System.out.println("Lista vazia, adicione um aluno para continuar.");
-                    } else {
-                        System.out.println("Digite o nome do aluno que deseja adicionar nota: ");
-                        String n = scan.next();
-                        Aluno nomeLista = null;
-
-                        for(Aluno al : alunoList){
-                            if(al.getNome().equalsIgnoreCase(n)){
-                                nomeLista = al;
-                                break;
-                            } 
-                        }
-
-                        if(nomeLista == null){
-                            System.out.println("Aluno não encontrado, tente novamente!");
-                        } else {
-                            int num;
-
-                            do{
-                                System.out.println("\n\nDigite uma opção:\n\n");
-                                System.out.println("Opcao 1 --> Adicionar a nota A1\n");
-                                System.out.println("Opcao 2 --> Adicionar a nota P1\n");
-                                System.out.println("Opcao 3 --> Adicionar a nota A2\n");
-                                System.out.println("Opcao 4 --> Adicionar a nota P2\n");
-                                System.out.println("Opcao 5 --> Calcular a Média do aluno\n");
-                                System.out.println("Opcao 0 --> Sair\n");
-
-                                num = this.scan.nextInt();
-
-                                switch (num) {
-                                    case 1:
-                                        System.out.println("Digite a nota A1: ");
-                                        a1 = scan.nextDouble();
-                                        int tam = -1;
-
-                                        for(Aluno al : alunoList){
-                                            tam++;
-                                            if(al.getNome().equalsIgnoreCase(n)){
-                                                break;
-                                            } 
-                                        }
-                                            Aluno alterar = alunoList.get(tam);
-                                            alterar.setA1(a1);
-                                            System.out.println("NOTA A1 ADICIONADA!!");
-                                        break;
-                                    
-                                    case 2:
-                                        System.out.println("Digite a nota P1: ");
-                                        p1 = scan.nextDouble();
-                                        tam = -1;
-
-                                        for(Aluno al : alunoList){
-                                            tam++;
-                                            if(al.getNome().equalsIgnoreCase(n)){
-                                                break;
-                                            } 
-                                        }
-                                            alterar = alunoList.get(tam);
-                                            alterar.setP1(p1);
-                                            System.out.println("NOTA P1 ADICIONADA!!");
-                                        break;
-
-                                    case 3:
-                                        System.out.println("Digite a nota A2: ");
-                                        a2 = scan.nextDouble();
-                                        tam = -1;
-
-                                        for(Aluno al : alunoList){
-                                            tam++;
-                                            if(al.getNome().equalsIgnoreCase(n)){
-                                                break;
-                                            } 
-                                        }
-                                            alterar = alunoList.get(tam);
-                                            alterar.setA2(a2);
-                                            System.out.println("NOTA A2 ADICIONADA!!");
-                                        break;
-
-                                    case 4:
-                                        System.out.println("Digite a nota P2: ");
-                                        p2 = scan.nextDouble();
-                                        tam = -1;
-
-                                        for(Aluno al : alunoList){
-                                            tam++;
-                                            if(al.getNome().equalsIgnoreCase(n)){
-                                                break;
-                                            } 
-                                        }
-                                            alterar = alunoList.get(tam);
-                                            alterar.setP2(p2);
-                                            System.out.println("NOTA P2 ADICIONADA!!");
-                                        break;
-
-                                    case 5:
-                                        System.out.println("A média do aluno é: ");
-                                        double media = (((p1 + a1)/2) + ((p2 + a2)/2)) / 2;
-                                        if(media < 6){
-                                            System.out.println("Aluno reprovado, média: " + media);
-                                        } else {
-                                            System.out.println("Aluno aprovado, média: " + media);
-                                        }
-
-                                        break;
-
-                                    case 0:
-                                        System.out.println("Finalizando Programa!");
-                                        break;
-                                
-                                    default:   
-                                    System.out.println("Opção inválida, tente novamente!");
-                                        break;
-                                }
-                            }
-                            while (num != 0);
-                        }
-                    }
+                    this.adicionarNota();
                         break;
 
-                    case 0:
-                        System.out.println("Finalizando Programa!");
-                        break;
+                case 0:
+                    System.out.println("Finalizando Programa!");
+                    break;
                 
-                    default:
-                    System.out.println("Opção inválida, tente novamente!");
-                        break;
-                }
-            } while (opt != 0);
-    }   
+                default:
+                System.out.println("Opção inválida, tente novamente!");
+                    break;
+            }
+        } while (opt != 0);
+    }
+    
+    //Função responsável por adicionar um aluno
+    private void adicionarAluno(){
+        double a1 = 0;
+        double p1 = 0;
+        double a2 = 0;
+        double p2 = 0;
+        String nome = "";
+        int codigo = 0;
+
+        System.out.println("Informe o nome do aluno: \n");
+        nome = scan.next();
+
+        System.out.println("Informe o codigo do aluno: \n");
+        codigo = scan.nextInt();
+        alunoList.add(new Aluno(nome, codigo, a1, p1, a2, p2));
+    }
 
     //Função responsável por alterar o nome de uma aluno
     private void alterarNomeAluno(){
@@ -252,7 +142,7 @@ public class menuAlunos {
         }
     }
 
-    //Função responsável por excluir um aluno da lista
+    //Função responsável por excluir um aluno
     private void excluirAluno(){
         if(alunoList.isEmpty()){
             System.out.println("Lista vazia, adicione um aluno para continuar.");
@@ -278,7 +168,7 @@ public class menuAlunos {
         }
     }
 
-    //Função responsável por imprimir uma lista dos alunos
+    //Função responsável por imprimir uma lista dos alunos com seus nomes e códigos
     private void listarAluno(){
         if(alunoList.isEmpty()){
             System.out.println("Lista vazia, adicione um aluno para continuar.");
@@ -295,8 +185,133 @@ public class menuAlunos {
         }
     }
 
-    //Função responsável por analisar o rendimento escolar
-    public void rendimentoEscolar(){
+    //Função responsável adicionar notas ao aluno
+    private void adicionarNota(){
+        if(alunoList.isEmpty()){
+            System.out.println("Lista vazia, adicione um aluno para continuar.");
+            } else {
+                System.out.println("Digite o nome do aluno que deseja adicionar nota: ");
+                String n = scan.next();
+
+                Aluno nomeLista = null;
+                double a1 = 0;
+                double p1 = 0;
+                double a2 = 0;
+                double p2 = 0;
+
+                for(Aluno al : alunoList){
+                    if(al.getNome().equalsIgnoreCase(n)){
+                        nomeLista = al;
+                        break;
+                    } 
+                }
+
+                if(nomeLista == null){
+                    System.out.println("Aluno não encontrado, tente novamente!");
+                } else {
+                    int opt;
+
+                    do{
+                        System.out.println("\n\nDigite uma opção:\n\n");
+                        System.out.println("Opcao 1 --> Adicionar a nota A1\n");
+                        System.out.println("Opcao 2 --> Adicionar a nota P1\n");
+                        System.out.println("Opcao 3 --> Adicionar a nota A2\n");
+                        System.out.println("Opcao 4 --> Adicionar a nota P2\n");
+                        System.out.println("Opcao 5 --> Calcular a Média do aluno\n");
+                        System.out.println("Opcao 0 --> Sair\n");
+
+                        opt = this.scan.nextInt();
+
+                        switch (opt) {
+                            case 1:
+                                System.out.println("Digite a nota A1: ");
+                                a1 = scan.nextDouble();
+                                int tam = 0;
+
+                                for(Aluno al : alunoList){
+                                    if(al.getNome().equalsIgnoreCase(n)){
+                                        break;
+                                    }
+                                    tam++;
+                                }
+                                    Aluno alterar = alunoList.get(tam);
+                                    alterar.setA1(a1);
+                                    System.out.println("NOTA A1 ADICIONADA!!");
+                                break;
+                            
+                            case 2:
+                                System.out.println("Digite a nota P1: ");
+                                p1 = scan.nextDouble();
+                                tam = 0;
+
+                                for(Aluno al : alunoList){
+                                    if(al.getNome().equalsIgnoreCase(n)){
+                                        break;
+                                    }
+                                    tam++;
+                                }
+                                    alterar = alunoList.get(tam);
+                                    alterar.setP1(p1);
+                                    System.out.println("NOTA P1 ADICIONADA!!");
+                                break;
+
+                            case 3:
+                                System.out.println("Digite a nota A2: ");
+                                a2 = scan.nextDouble();
+                                tam = 0;
+
+                                for(Aluno al : alunoList){                      
+                                    if(al.getNome().equalsIgnoreCase(n)){
+                                        break;
+                                    } 
+                                    tam++;
+                                }
+                                    alterar = alunoList.get(tam);
+                                    alterar.setA2(a2);
+                                    System.out.println("NOTA A2 ADICIONADA!!");
+                                break;
+
+                            case 4:
+                                System.out.println("Digite a nota P2: ");
+                                p2 = scan.nextDouble();
+                                tam = 0;
+
+                                for(Aluno al : alunoList){
+                                    if(al.getNome().equalsIgnoreCase(n)){
+                                        break;
+                                    }
+                                    tam++;
+                                }
+                                    alterar = alunoList.get(tam);
+                                    alterar.setP2(p2);
+                                    System.out.println("NOTA P2 ADICIONADA!!");
+                                break;
+
+                            case 5:
+                                double media = (((p1 + a1)/2) + ((p2 + a2)/2)) / 2;
+                                if(media < 6){
+                                    System.out.println("Aluno reprovado, média: " + media);
+                                } else {
+                                    System.out.println("Aluno aprovado, média: " + media);
+                                }
+                                break;
+
+                            case 0:
+                                System.out.println("Finalizando Programa!");
+                                break;
+                        
+                            default:   
+                                System.out.println("Opção inválida, tente novamente!");
+                                break;
+                        }
+                    }
+                    while (opt != 0);
+                }
+            }
+    }
+
+    //Função responsável por abrir o submenu da opção 2 do menuExecutar
+    public void menuRendimentoEscolar(){
         int opt;
         do{
             System.out.println("\n\nDigite uma opção:\n\n");
@@ -312,20 +327,7 @@ public class menuAlunos {
                     break;
                 
                 case 2:
-                    if(alunoList.isEmpty()){
-                        System.out.println("Lista vazia, adicione um aluno para continuar.");
-                    } else {
-                        int i = 0;
-                        System.out.println("Lista de alunos: ");
-                        for(Aluno al : alunoList){
-                            i++;
-                            double media = (((al.getA1() + al.getP1())/2) + ((al.getA2() + al.getP2())/2)) / 2;
-                            System.out.println("\nAluno " + i + " --> " +  al.getNome() + "\n\nNotas: " + "\nA1:" + al.getA1() + "\nP1:" + al.getP1() + "\nA2:" + al.getA2() + "\nP2:" + al.getP2() + "\nMedia: " + media);
-                            if(al.getNome() == null){
-                            break;
-                            }
-                        }
-                    }
+                    this.rendimentoTurma();
                     break;
 
                 case 0:
@@ -339,7 +341,7 @@ public class menuAlunos {
         } while (opt != 0);
     }
 
-    //Função responsável por analisar o rendimento escolar do aluno
+    //Função responsável por analisar o rendimento escolar de um aluno
     private void rendimentoAluno(){
         if(alunoList.isEmpty()){
             System.out.println("Lista vazia, adicione um aluno para continuar.");
@@ -365,6 +367,24 @@ public class menuAlunos {
                 System.out.println("\nNota A2: " + nomeLista.getA2());
                 System.out.println("\nNota P2: " + nomeLista.getP2());
                 System.out.println("\nMédia: " + media);
+            }
+        }
+    }
+
+    //Função responsável por analisar o rendimento escolar da turma
+    private void rendimentoTurma(){
+        if(alunoList.isEmpty()){
+            System.out.println("Lista vazia, adicione um aluno para continuar.");
+        } else {
+            int i = 0;
+            System.out.println("Lista de alunos: ");
+            for(Aluno al : alunoList){
+                i++;
+                double media = (((al.getA1() + al.getP1())/2) + ((al.getA2() + al.getP2())/2)) / 2;
+                System.out.println("\nAluno " + i + " --> " +  al.getNome() + "\n\n***Notas***" + "\nNota A1: " + al.getA1() + "\nNota P1: " + al.getP1() + "\nNota A2: " + al.getA2() + "\nNota P2: " + al.getP2() + "\nMedia: " + media);
+                if(al.getNome() == null){
+                    break;
+                }
             }
         }
     }
