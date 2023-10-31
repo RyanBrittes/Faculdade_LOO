@@ -95,19 +95,13 @@ public class menuAlunos {
     
     //Função responsável por adicionar um aluno
     private void adicionarAluno(){
-        double a1 = 0;
-        double p1 = 0;
-        double a2 = 0;
-        double p2 = 0;
-        String nome = "";
-        int codigo = 0;
         Aluno alunoAlterar = null;
 
         System.out.println("Informe o nome do aluno: \n");
-        nome = scan.next();
+        String nome = scan.next();
 
         System.out.println("Informe o codigo do aluno: \n");
-        codigo = scan.nextInt();
+        int codigo = scan.nextInt();
 
         for(Aluno al : alunoList){
             if(al.getCodigo() == codigo){
@@ -115,10 +109,13 @@ public class menuAlunos {
                 break;
             }
         }
-
         if(alunoAlterar != null){
             System.out.println("O código digitado já está vinculado a um aluno, tente novamente.");
         } else {
+            double a1 = 0;
+            double p1 = 0;
+            double a2 = 0;
+            double p2 = 0;
             alunoList.add(new Aluno(nome, codigo, a1, p1, a2, p2));
         }
     }
@@ -190,7 +187,7 @@ public class menuAlunos {
             System.out.println("Lista de alunos: ");
             for(Aluno al : alunoList){
                 i++;
-                System.out.println("\nAluno: " + i + " - " +  al.getNome() + "\nCodigo: " + al.getCodigo());
+                System.out.println("\nAluno " + i + ": " +  al.getNome() + "\nCodigo: " + al.getCodigo());
                 if(al.getNome() == null){
                     break;
                 }
@@ -206,18 +203,19 @@ public class menuAlunos {
                 System.out.println("Digite o codigo do aluno que deseja adicionar nota: ");
                 int cod = scan.nextInt();
 
+                int tam = 0;
                 Aluno alunoNota = null;
                 for(Aluno al : alunoList){
                     if(al.getCodigo() == cod){
                         alunoNota = al;
                         break;
-                    } 
+                    }
+                    tam++;
                 }
 
                 if(alunoNota == null){
                     System.out.println("Aluno não encontrado, tente novamente!");
                 } else {
-                    int tam = 0;
                     int opt;
                     double a1 = 0;
                     double p1 = 0;
@@ -329,7 +327,7 @@ public class menuAlunos {
         if(alunoList.isEmpty()){
             System.out.println("Lista vazia, adicione um aluno para continuar.");
         } else {
-            System.out.println("Digite o coóigo que deseja verificar: ");
+            System.out.println("Digite o código do aluno que deseja verificar: ");
             int cod = scan.nextInt();
             Aluno nomeLista = null;
 
@@ -341,10 +339,10 @@ public class menuAlunos {
             }
 
             if(nomeLista == null){
-                System.out.println("Aluno não encontrado, tente novamente!");
+                System.out.println("\nAluno não encontrado, tente novamente!");
             } else {
                 double media = (((nomeLista.getA1() + nomeLista.getP1())/2) + ((nomeLista.getA2() + nomeLista.getP2())/2)) / 2;
-                System.out.println("Aluno " + nomeLista.getNome() + " selecionado!");
+                System.out.println("\nAluno " + nomeLista.getNome() + " selecionado!");
                 System.out.println("\nNota A1: " + nomeLista.getA1());
                 System.out.println("\nNota P1: " + nomeLista.getP1());
                 System.out.println("\nNota A2: " + nomeLista.getA2());
@@ -357,10 +355,10 @@ public class menuAlunos {
     //Função responsável por analisar o rendimento escolar da turma
     private void rendimentoTurma(){
         if(alunoList.isEmpty()){
-            System.out.println("Lista vazia, adicione um aluno para continuar.");
+            System.out.println("\nLista vazia, adicione um aluno para continuar.");
         } else {
             int i = 0;
-            System.out.println("Lista de alunos: ");
+            System.out.println("\nLista de alunos: ");
             for(Aluno al : alunoList){
                 i++;
                 double media = (((al.getA1() + al.getP1())/2) + ((al.getA2() + al.getP2())/2)) / 2;
