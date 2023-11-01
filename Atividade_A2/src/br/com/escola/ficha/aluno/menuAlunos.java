@@ -1,5 +1,5 @@
 //Pacote em que a classe se encontra
-package br.com.fichaEscolar;
+package br.com.escola.ficha.aluno;
 
 //Importação de bibliotecas que serão utilizadas
 import java.util.ArrayList;

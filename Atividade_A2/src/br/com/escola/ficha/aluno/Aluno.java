@@ -1,4 +1,4 @@
-package br.com.fichaEscolar;
+package br.com.escola.ficha.aluno;
 
 //Classe responsável por conter os dados do alunos
 public class Aluno {

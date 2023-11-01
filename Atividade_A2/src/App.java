@@ -1,4 +1,4 @@
-import br.com.fichaEscolar.menuAlunos;
+import br.com.escola.ficha.aluno.menuAlunos;
 
 public class App {
     public static void main(String[] args) throws Exception {
