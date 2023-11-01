@@ -1,5 +1,7 @@
+//Pacote em que a classe se encontra
 package br.com.fichaEscolar;
 
+//Importação de bibliotecas que serão utilizadas
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -57,7 +59,7 @@ public class menuAlunos {
     }
 
     //Função responsável por abrir o submenu da opção 1 do menuExecutar
-    public void menuGerenciarAlunos(){
+    private void menuGerenciarAlunos(){
         //Atributos
         int opt;
 
@@ -115,7 +117,7 @@ public class menuAlunos {
     }
     
     //Função responsável por adicionar um aluno
-    public void adicionarAluno(){
+    private void adicionarAluno(){
         //Atributo do tipo ArrayList Aluno com a função de armazenar a informação do índice ao percorrer a lista
         Aluno alunoAlterar = null;
 
@@ -314,7 +316,7 @@ public class menuAlunos {
                     //Atributo responsável por receber a informação do índice que a lista percorreu e parou
                     Aluno alterarNota = alunoList.get(tam);
 
-                    //Menu de opções utilizado para chamar realizar operações e interagir com o usuário
+                    //Menu de opções utilizado para realizar operações e interagir com o usuário
                     do{
                         System.out.println("\n\nDigite uma opção:\n\n");
                         System.out.println("Opcao 1 --> Adicionar a nota A1\n");
@@ -336,6 +338,7 @@ public class menuAlunos {
                                 System.out.println("NOTA A1 ADICIONADA!!");
                                 break;
                             
+                            //Operação responsável por solicitar a nota P1 ao usuário e atribuir o valor digitado
                             case 2:
                                 System.out.println("Digite a nota P1: ");
                                 p1 = scan.nextDouble();
@@ -344,6 +347,7 @@ public class menuAlunos {
                                 System.out.println("NOTA P1 ADICIONADA!!");
                                 break;
 
+                            //Operação responsável por solicitar a nota A2 ao usuário e atribuir o valor digitado
                             case 3:
                                 System.out.println("Digite a nota A2: ");
                                 a2 = scan.nextDouble();
@@ -351,7 +355,8 @@ public class menuAlunos {
                                 alterarNota.setA2(a2);
                                 System.out.println("NOTA A2 ADICIONADA!!");
                                 break;
-
+                        
+                            //Operação responsável por solicitar a nota P2 ao usuário e atribuir o valor digitado
                             case 4:
                                 System.out.println("Digite a nota P2: ");
                                 p2 = scan.nextDouble();
@@ -360,6 +365,7 @@ public class menuAlunos {
                                 System.out.println("NOTA P2 ADICIONADA!!");
                                 break;
 
+                            //Operação responsável por calcular e imprimir a média do usuário que foi digitado
                             case 5:
                                 double media = (((p1 + a1)/2) + ((p2 + a2)/2)) / 2;
                                 if(media < 6){
@@ -369,60 +375,81 @@ public class menuAlunos {
                                 }
                                 break;
 
+                            //Mensagem de aviso de transição ao menu anterior
                             case 0:
                                 System.out.println("Voltando...!");
                                 break;
                         
+                            //Mensagem responsável por informar que o usuário digitou algum dado inválido no sistema 
                             default:   
                                 System.out.println("Opção inválida, tente novamente!");
                                 break;
                         }
                     }
+
+                    //Condiçao de repetição do loop de "menuGerenciarAluno"
                     while (opt != 0);
                 }
             }
     }
 
     //Função responsável por abrir o submenu da opção 2 do menuExecutar
-    public void menuRendimentoEscolar(){
+    private void menuRendimentoEscolar(){
+        //Atributos
         int opt;
+
+        //Menu de opções utilizado para chamar funções e interagir com o usuário
         do{
             System.out.println("\n\nDigite uma opção:\n\n");
             System.out.println("Opcao 1 --> Analisar o rendimento de um aluno\n");
             System.out.println("Opcao 2 --> Analisar o rendimento da turma\n");
             System.out.println("Opcao 0 --> Voltar\n");
 
-            opt = this.scan.nextInt();
+            opt = scan.nextInt();
 
             switch (opt) {
+                //Função responsável por exibir as notas e o nome de um aluno
                 case 1:
                     this.rendimentoAluno();
                     break;
                 
+                //Função responsável por exibir as notas e o nome de cada aluno na lista
                 case 2:
                     this.rendimentoTurma();
                     break;
 
+                //Mensagem de aviso de transição ao menu anterior
                 case 0:
                     System.out.println("Voltando...");
                     break;
             
+                //Mensagem responsável por informar que o usuário digitou algum dado inválido no sistema 
                 default:
                 System.out.println("Opção inválida, tente novamente!");
                     break;
             }
-        } while (opt != 0);
+        } 
+        //Condiçao de repetição do loop de "menuGerenciarAluno"
+        while (opt != 0);
     }
 
     //Função responsável por analisar o rendimento escolar de um aluno
     private void rendimentoAluno(){
+        //Verificação se a lista está vazia, caso esteja será solicitado ao usuário para adicionar um aluno para continuar com a ação
         if(alunoList.isEmpty()){
             System.out.println("Lista vazia, adicione um aluno para continuar.");
-        } else {
+        } 
+        
+        //Caso a lista não esteja vazia será solicitado o código do aluno para que o usuário possa adicionar notas ao aluno
+        else {
+            //Solicitação do código do aluno que o usuário dejesa verificar
             System.out.println("Digite o código do aluno que deseja verificar: ");
             int cod = scan.nextInt();
+
+            //Atributo do tipo ArrayList Aluno com a função de armazenar a informação do índice ao percorrer a lista
             Aluno nomeLista = null;
 
+            //Verificação na lista se o código digitado existe na lista
             for(Aluno al : alunoList){
                 if(al.getCodigo() == cod){
                     nomeLista = al;
@@ -430,9 +457,13 @@ public class menuAlunos {
                 } 
             }
 
+            //Caso o código digitado não exista, será exibida uma mensagem informando ao usuário que não foi encontrado
             if(nomeLista == null){
                 System.out.println("\nAluno não encontrado, tente novamente!");
-            } else {
+            } 
+            
+            //Caso seja encontrado, serão exibidas as notas do aluno, média e o nome
+            else {
                 double media = (((nomeLista.getA1() + nomeLista.getP1())/2) + ((nomeLista.getA2() + nomeLista.getP2())/2)) / 2;
                 System.out.println("\nAluno " + nomeLista.getNome() + " selecionado!");
                 System.out.println("\nNota A1: " + nomeLista.getA1());
@@ -446,11 +477,19 @@ public class menuAlunos {
 
     //Função responsável por analisar o rendimento escolar da turma
     private void rendimentoTurma(){
+        //Verificação se a lista está vazia, caso esteja será solicitado ao usuário para adicionar um aluno para continuar com a ação
         if(alunoList.isEmpty()){
             System.out.println("\nLista vazia, adicione um aluno para continuar.");
-        } else {
+        } 
+        
+        //Caso a lista não esteja vazia serão exibidas as notas, média e nome dos alunos na lista
+        else {
+            //Atributos
             int i = 0;
+
             System.out.println("\nLista de alunos: ");
+
+            //Operação responsável por percorrer a lista e imprimir as notas, nome e a média dos valores encontrados até o fim
             for(Aluno al : alunoList){
                 i++;
                 double media = (((al.getA1() + al.getP1())/2) + ((al.getA2() + al.getP2())/2)) / 2;
