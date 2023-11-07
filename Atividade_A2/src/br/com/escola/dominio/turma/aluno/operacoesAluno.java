@@ -24,8 +24,9 @@ public class operacoesAluno {
         double p1 = 0;
         double a2 = 0;
         double p2 = 0;
+        double media = 0;
 
-        alunoList.add(new Aluno(nome, codigo, a1, p1, a2, p2));
+        alunoList.add(new Aluno(nome, codigo, a1, p1, a2, p2, media));
     }
 
     public void alterarNomeAluno(){
@@ -92,6 +93,7 @@ public class operacoesAluno {
             double p1 = 0;
             double a2 = 0;
             double p2 = 0;
+            double media = 0;
             Aluno alterarNota = alunoList.get(tam);
 
             do{
@@ -134,12 +136,13 @@ public class operacoesAluno {
                         System.out.println("NOTA P2 ADICIONADA!!");
                         break;
                     case 5:
-                        double media = (((p1 + a1)/2) + ((p2 + a2)/2)) / 2;
+                        media = (((p1 + a1)/2) + ((p2 + a2)/2)) / 2;
                         if(media < 6){
                             System.out.println("Aluno reprovado, média: " + media);
                         } else {
                             System.out.println("Aluno aprovado, média: " + media);
                         }
+                        alterarNota.setMedia(media);
                         break;
                     case 0:
                         System.out.println("Voltando...!");
@@ -162,13 +165,12 @@ public class operacoesAluno {
         if(lista == null){
             System.out.println("\nAluno não encontrado, tente novamente!");
         } else {
-            double media = (((lista.getA1() + lista.getP1())/2) + ((lista.getA2() + lista.getP2())/2)) / 2;
             System.out.println("\nAluno " + lista.getNome() + " selecionado!");
             System.out.println("\nNota A1: " + lista.getA1());
             System.out.println("\nNota P1: " + lista.getP1());
             System.out.println("\nNota A2: " + lista.getA2());
             System.out.println("\nNota P2: " + lista.getP2());
-            System.out.println("\nMédia: " + media);
+            System.out.println("\nMédia: " + lista.getMedia());
         }
     }
 

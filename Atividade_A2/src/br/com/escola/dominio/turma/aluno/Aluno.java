@@ -1,7 +1,5 @@
 package br.com.escola.dominio.turma.aluno;
 
-import java.util.ArrayList;
-
 //Classe responsável por conter os dados do alunos
 public class Aluno {
     //Atributos
@@ -11,10 +9,17 @@ public class Aluno {
     private double A2;
     private double P1;
     private double P2;
-
-    private ArrayList<Aluno> alunoList;
+    private double media;
 
     //Getters e Setters
+    
+
+    public double getMedia() {
+        return media;
+    }
+    public void setMedia(double media) {
+        this.media = media;
+    }
     public String getNome() {
         return nome;
     }
@@ -53,23 +58,18 @@ public class Aluno {
     }
 
     //Construtor
-    public Aluno(String nome, int codigo, double a1, double a2, double p1, double p2) {
+    public Aluno(String nome, int codigo, double a1, double a2, double p1, double p2, double media) {
         this.nome = nome;
         this.codigo = codigo;
         A1 = a1;
         A2 = a2;
         P1 = p1;
         P2 = p2;
+        this.media = media;
     }
-
-    //Exibição dos valores
+    
     public String toString() {
-        return "\nAluno = " + nome + "\nCodigo = " + codigo + "\nA1 = " + A1 + "\nA2 = " + A2 + "\nP1 = " + P1 + "\nP2 = " + P2;
-    }
-
-    public ArrayList<Aluno> imprimirAlunos(){
-        ArrayList<Aluno> lista = alunoList;
-        
-        return lista;
+        return "Aluno [nome=" + nome + ", codigo=" + codigo + ", A1=" + A1 + ", A2=" + A2 + ", P1=" + P1 + ", P2=" + P2
+                + ", media=" + media + "]";
     }
 }
