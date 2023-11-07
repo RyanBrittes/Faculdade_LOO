@@ -1,4 +1,6 @@
-package br.com.escola.ficha.aluno;
+package br.com.escola.dominio.turma.aluno;
+
+import java.util.ArrayList;
 
 //Classe responsável por conter os dados do alunos
 public class Aluno {
@@ -9,6 +11,8 @@ public class Aluno {
     private double A2;
     private double P1;
     private double P2;
+
+    private ArrayList<Aluno> alunoList;
 
     //Getters e Setters
     public String getNome() {
@@ -63,4 +67,9 @@ public class Aluno {
         return "\nAluno = " + nome + "\nCodigo = " + codigo + "\nA1 = " + A1 + "\nA2 = " + A2 + "\nP1 = " + P1 + "\nP2 = " + P2;
     }
 
+    public ArrayList<Aluno> imprimirAlunos(){
+        ArrayList<Aluno> lista = alunoList;
+        
+        return lista;
+    }
 }
