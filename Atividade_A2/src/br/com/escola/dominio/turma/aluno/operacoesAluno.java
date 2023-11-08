@@ -213,8 +213,7 @@ public class operacoesAluno {
 
         for(Aluno al : alunoList){
             i++;
-            double media = (((al.getA1() + al.getP1())/2) + ((al.getA2() + al.getP2())/2)) / 2;
-            System.out.println("\nAluno " + i + " --> " +  al.getNome() + "\n\n***Notas***" + "\nNota A1: " + al.getA1() + "\nNota P1: " + al.getP1() + "\nNota A2: " + al.getA2() + "\nNota P2: " + al.getP2() + "\nMedia: " + media);
+            System.out.println("\nAluno " + i + " --> " +  al.getNome() + "\n\n***Notas***" + "\nNota A1: " + al.getA1() + "\nNota P1: " + al.getP1() + "\nNota A2: " + al.getA2() + "\nNota P2: " + al.getP2() + "\nMedia: " + al.getMedia());
             if(al.getNome() == null){
                 break;
             }

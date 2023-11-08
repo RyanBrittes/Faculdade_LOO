@@ -2,14 +2,12 @@ package br.com.escola.dominio;
 
 import java.util.Scanner;
 
-import br.com.escola.dominio.turma.Turma;
 import br.com.escola.dominio.turma.aluno.operacoesAluno;
 
 public class menuAluno {
     public Scanner scan;
 
     operacoesAluno operacoes = new operacoesAluno();
-    Turma turma = new Turma();
 
     public menuAluno() {
         this.scan = new Scanner(System.in);
@@ -44,7 +42,7 @@ public class menuAluno {
         while(opt != 9);
     }
 
-    public void menuGerenciarAlunos(){
+    private void menuGerenciarAlunos(){
         int opt;
 
         do{
@@ -88,7 +86,7 @@ public class menuAluno {
         while (opt != 0);
     }
 
-    public void menuRendimentoEscolar(){
+    private void menuRendimentoEscolar(){
         int opt;
 
         do{

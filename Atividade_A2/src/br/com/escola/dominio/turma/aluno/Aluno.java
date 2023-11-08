@@ -12,8 +12,6 @@ public class Aluno {
     private double media;
 
     //Getters e Setters
-    
-
     public double getMedia() {
         return media;
     }
