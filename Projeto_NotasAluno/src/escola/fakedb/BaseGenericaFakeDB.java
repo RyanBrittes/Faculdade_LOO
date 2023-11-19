@@ -13,9 +13,20 @@ public abstract class BaseGenericaFakeDB<TDominio> {
     }
 
     public abstract void adicionarAluno();
+    public abstract void alterarNomeAluno();
+    public abstract void excluirAluno();
+    public abstract void listarAluno();
+    public abstract void adicionarNota();
+    public abstract void rendimentoAluno();
+    
 
     public BaseGenericaFakeDB(){
         this.getTabela();
         this.adicionarAluno();
+        this.alterarNomeAluno();
+        this.excluirAluno();
+        this.listarAluno();
+        this.adicionarNota();
+        this.rendimentoAluno();
     }
 }

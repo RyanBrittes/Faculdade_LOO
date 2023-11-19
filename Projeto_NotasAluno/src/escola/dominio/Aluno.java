@@ -1,7 +1,5 @@
 package src.escola.dominio;
 
-import java.time.LocalDate;
-
 public class Aluno extends BasePessoa{
     private double a1;
     private double p1;
@@ -40,9 +38,8 @@ public class Aluno extends BasePessoa{
         this.media = media;
     }
 
-    public Aluno(int codigo, String nome, LocalDate dataNascimento, double a1, double p1, double a2, double p2,
-            double media) {
-        super(codigo, nome, dataNascimento);
+    public Aluno(int codigo, String nome, double a1, double p1, double a2, double p2, double media) {
+        super(codigo, nome);
         this.a1 = a1;
         this.p1 = p1;
         this.a2 = a2;
@@ -53,5 +50,5 @@ public class Aluno extends BasePessoa{
     @Override
     public String toString() {
         return "Aluno [a1=" + a1 + ", p1=" + p1 + ", a2=" + a2 + ", p2=" + p2 + ", media=" + media + "]";
-    };
+    }
 }
