@@ -1,4 +1,4 @@
-package dominio;
+package clinica.dominio;
 
 public class Endereco extends BaseIdentificador{
     private String logradouro;

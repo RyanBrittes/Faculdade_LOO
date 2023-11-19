@@ -1,4 +1,4 @@
-package dominio;
+package clinica.dominio;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

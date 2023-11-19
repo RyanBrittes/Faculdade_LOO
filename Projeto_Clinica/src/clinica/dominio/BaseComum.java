@@ -1,4 +1,4 @@
-package dominio;
+package clinica.dominio;
 
 public abstract class BaseComum extends BaseIdentificador{
     protected String descricao;

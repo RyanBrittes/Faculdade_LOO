@@ -1,4 +1,4 @@
-package dominio;
+package clinica.dominio;
 
 public class Profissao extends BaseComum{
 

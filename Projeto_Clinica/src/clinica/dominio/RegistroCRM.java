@@ -1,4 +1,4 @@
-package dominio;
+package clinica.dominio;
 
 public class RegistroCRM extends BaseIdentificador{
     private String numero;

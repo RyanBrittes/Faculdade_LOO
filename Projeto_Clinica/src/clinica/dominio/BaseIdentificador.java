@@ -1,4 +1,4 @@
-package dominio;
+package clinica.dominio;
 
 public abstract class BaseIdentificador {
     protected int codigo;
@@ -14,5 +14,11 @@ public abstract class BaseIdentificador {
     public BaseIdentificador(int codigo) {
         this.codigo = codigo;
     }
+
+    public String toString() {
+        return "BaseIdentificador [codigo=" + codigo + "]";
+    }
+
+    
     
 }

@@ -1,4 +1,4 @@
-package dominio;
+package clinica.dominio;
 
 public class EspecialidadesPorMedico extends BaseIdentificador{
     private int codigoMedico;

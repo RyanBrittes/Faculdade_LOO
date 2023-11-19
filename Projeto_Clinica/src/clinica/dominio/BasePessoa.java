@@ -1,4 +1,4 @@
-package dominio;
+package clinica.dominio;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -87,4 +87,11 @@ public abstract class BasePessoa extends BaseIdentificador{
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
     }
+
+    public String toString() {
+        return "BasePessoa [nome=" + nome + ", email=" + email + ", rg=" + rg + ", cpf=" + cpf + ", dataNascimento="
+                + dataNascimento + ", codigoProfissao=" + codigoProfissao + ", codigoEscolaridade=" + codigoEscolaridade
+                + ", enderecos=" + enderecos + "]";
+    }
+
 }
