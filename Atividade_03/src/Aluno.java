@@ -23,8 +23,4 @@ public class Aluno extends BasePessoa {
         this.matricula = matricula;
         this.dataMatricula = dataMatricula;
     }
-
-    public Aluno(){
-        
-    }
 }

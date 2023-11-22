@@ -25,8 +25,4 @@ public class Professor extends BasePessoa {
         this.registro = registro;
         this.dataContratacao = dataContratacao;
     }
-
-    public Professor(){
-
-    }
 }
